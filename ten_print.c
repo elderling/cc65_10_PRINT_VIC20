@@ -15,8 +15,6 @@ uint8_t main(void) {
 
   while (1) {
     (rand() % 2) ? printf("%s", &slant1) : printf("%s", &slant2);
-    //printf("%d", rand() % 2 );
-    //printf("\n");
   }
 
   return 0;
