@@ -5,8 +5,9 @@
 
 # define VID_RAM_LAYOUT_REG 0x9005
 
-uint8_t slant1[] = { 'M', 0 };
-uint8_t slant2[] = { 'N', 0 };
+uint8_t slant1 = 'M';
+uint8_t slant2 = 'N';
+
 
 uint8_t main(void) {
 
@@ -14,7 +15,7 @@ uint8_t main(void) {
   POKE(VID_RAM_LAYOUT_REG, 0xf0);
 
   while (1) {
-    (rand() % 2) ? printf("%s", &slant1) : printf("%s", &slant2);
+    putchar((rand() & 1) ? slant1 : slant2);
   }
 
   return 0;
